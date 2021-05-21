@@ -14,13 +14,3 @@ $ python3 -m pip install -r requirements.txt
 # run the program
 $ python3 main.py
 ```
-
-
-
-
-pySimpleGUI
-
-PyPDF2
-
-
-- script: auto install pip3 packages
