@@ -1,7 +1,6 @@
 from tkinter.constants import VERTICAL
-from merge import check_file, merge_pdf
+from merge import check_file, merge_pdf, open_file
 import PySimpleGUI as sg
-
 
 if __name__=='__main__':
     sg.theme('DarkAmber') #Color theme
@@ -20,6 +19,7 @@ if __name__=='__main__':
 
         if check_file([values[0], values[1]]) is True:
             merge_pdf([values[0], values[1]], "out.pdf")
+            open_file("out.pdf")
             break    
 
     window.close()

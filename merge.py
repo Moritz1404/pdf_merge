@@ -1,6 +1,8 @@
 from PyPDF2 import PdfFileReader, PdfFileWriter, PdfFileMerger
 import pathlib
-import os.path
+import os
+import subprocess
+import platform
 
 def merge_pdf(input_paths, output_path):
 	writer = PdfFileWriter()
@@ -18,6 +20,13 @@ def check_file(input_paths):
 	else:
 		return False
 
+def open_file(filepath):
+	if platform.system() == 'Darwin':		#macOS
+		subprocess.call(('open', filepath)) 
+	elif platform.system() == 'Windows':	#Windows
+		os.startfile(filepath)
+	else:									#linux variants
+		subprocess.call(('xdg-open', filepath))		
 
 
 
