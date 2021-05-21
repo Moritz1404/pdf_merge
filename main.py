@@ -4,7 +4,7 @@ from merge import check_file, merge_pdf, open_file
 import PySimpleGUI as sg
 
 if __name__=='__main__':
-    sg.theme('DarkAmber') #Color theme
+    sg.theme('LightGrey1') #Color theme
     #Alles innerhalb des Fensters
     layout = [  [sg.Text('First PDF path:'), sg.InputText(key='Input1')],
                 [sg.Text('Second PDF path:'), sg.InputText(key='Input2')],
