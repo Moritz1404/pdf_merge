@@ -20,6 +20,7 @@ def check_file(input_paths):
 	else:
 		return False
 
+
 def open_file(filepath):
 	if platform.system() == 'Darwin':		#macOS
 		subprocess.call(('open', filepath)) 
@@ -27,41 +28,3 @@ def open_file(filepath):
 		os.startfile(filepath)
 	else:									#linux variants
 		subprocess.call(('xdg-open', filepath))		
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-##if __name__=='__main__':
-##	first_path = input("1.PDF path: ")
-##	second_path = input("2.PDF path: ")
-	
-	#if os.path.isfile(first_path) and os.path.isfile(second_path):
-	#	merge_pdf([first_path, second_path], "out.pdf")
-	#	
-	#	print("Merge successfully\n")
-	#	print("Merged to " + str(pathlib.Path(__file__).parent.absolute()))
-
-	#else:
-	#	print("Path not existing!")
-	#	exit(1)
-
-##	if check_file([first_path, second_path]) is True:
-##		print('geil')
-#	else:
-#		exit(1)

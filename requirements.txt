@@ -1,2 +1,2 @@
-pypdf2>=1.26.0
-pysimplegui>=4.41.2
+PyPDF2==1.26.0
+PySimpleGUI==4.41.2

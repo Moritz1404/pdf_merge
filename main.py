@@ -1,6 +1,6 @@
 from tkinter.constants import VERTICAL
 from traceback import clear_frames
-from merge import check_file, merge_pdf, open_file
+from merge import check_file, merge_pdf, open_file, start_thread
 import PySimpleGUI as sg
 
 if __name__=='__main__':
