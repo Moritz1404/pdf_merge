@@ -1,6 +1,6 @@
 from tkinter.constants import VERTICAL
 from traceback import clear_frames
-from merge import check_file, merge_pdf, open_file, start_thread
+from merge import check_file, merge_pdf, open_file
 import PySimpleGUI as sg
 
 if __name__=='__main__':
@@ -8,6 +8,7 @@ if __name__=='__main__':
     #Alles innerhalb des Fensters
     layout = [  [sg.Text('First PDF path:'), sg.InputText(key='Input1')],
                 [sg.Text('Second PDF path:'), sg.InputText(key='Input2')],
+                [sg.Text('Save to:'), sg.InputText(key='Input3')],
                 [sg.Button('Merge'), sg.Button('Cancel')]
     ]
     #Create the window
@@ -18,13 +19,14 @@ if __name__=='__main__':
         if event == sg.WIN_CLOSED or event == 'Cancel':
             break
 
-        if check_file([values['Input1'], values['Input2']]) is True:
-            merge_pdf([values['Input1'], values['Input2']], "out.pdf")
-            open_file("out.pdf")
+        if check_file([values['Input1'], values['Input2'], values['Input3']]) is True:
+            merge_pdf([values['Input1'], values['Input2']], values['Input3'])
+            open_file(values['Input3'])
             break
         else:
             sg.popup('Wrong Path', 'Enter a valid path')    
             window['Input1'].update('')
             window['Input2'].update('')
+            window['Input3'].update('')
 
     window.close()
