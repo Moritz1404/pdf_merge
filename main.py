@@ -19,7 +19,7 @@ if __name__=='__main__':
         if event == sg.WIN_CLOSED or event == 'Cancel':
             break
 
-        if check_file([values['Input1'], values['Input2'], values['Input3']]) is True:
+        if check_file([values['Input1'], values['Input2']]) is True:
             merge_pdf([values['Input1'], values['Input2']], values['Input3'])
             open_file(values['Input3'])
             break
