@@ -1,14 +1,16 @@
 from tkinter.constants import VERTICAL
 from traceback import clear_frames
+
+from PySimpleGUI.PySimpleGUI import FileBrowse
 from merge import check_file, merge_pdf, open_file
 import PySimpleGUI as sg
 
 if __name__=='__main__':
     sg.theme('LightGrey1') #Color theme
     #Alles innerhalb des Fensters
-    layout = [  [sg.Text('First PDF path:'), sg.InputText(key='Input1')],
-                [sg.Text('Second PDF path:'), sg.InputText(key='Input2')],
-                [sg.Text('Save to:'), sg.InputText(key='Input3')],
+    layout = [  [sg.Text('First PDF path:'), sg.Input(), sg.FileBrowse(key='Input1')],
+                [sg.Text('Second PDF path:'), sg.Input(), sg.FileBrowse(key='Input2')],
+                [sg.Text('Save to:'), sg.Input(key='Input3')],
                 [sg.Button('Merge'), sg.Button('Cancel')]
     ]
     #Create the window
