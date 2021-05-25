@@ -16,7 +16,7 @@ def merge_pdf(input_paths, output_path):
 
 
 def check_file(input_paths):
-	if os.path.isfile(str(input_paths[0])) and os.path.isfile(str(input_paths[1])) and os.path.isfile(str(input_paths[2])):
+	if os.path.isfile(str(input_paths[0])) and os.path.isfile(str(input_paths[1])):
 		return True
 	else:
 		return False
